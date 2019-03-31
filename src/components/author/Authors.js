@@ -42,9 +42,9 @@ export default class Authors extends Component{
                 </thead>
                 <tbody>
                     {this.tabRow()}
-                    <Link to={"/createAuthor"} className='btn btn-primary'>Create Author</Link>
                 </tbody>
                 </table>
+                <Link to={"/createAuthor"} className='btn btn-primary'>Create Author</Link>
             </div>
         )   
     }

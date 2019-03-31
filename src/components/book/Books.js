@@ -44,9 +44,10 @@ export default class Books extends Component{
                 </thead>
                 <tbody>
                     {this.tabRow()}
-                    <Link to={"/createBook"} className='btn btn-primary'>Create Book</Link>
+                    
                 </tbody>
                 </table>
+                <Link to={"/createBook"} className='btn btn-primary'>Create Book</Link>
             </div>
         )   
     }

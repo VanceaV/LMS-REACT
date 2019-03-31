@@ -30,7 +30,7 @@ class TableRowAuthour extends Component{
 
 
                 <td>
-                    <Link to={"/updateAuthor/"+this.props.author.book_id} className='btn btn-primary'>Update</Link>
+                    <Link to={"/updateAuthor/"+this.props.author.author_id} className='btn btn-primary'>Update</Link>
                 </td>
 
                 <td>

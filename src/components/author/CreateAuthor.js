@@ -19,7 +19,7 @@ export default class CreateAuthor extends Component{
 
     onChangeName(e){
         this.setState({
-            title: e.target.value
+            author_name: e.target.value
         })
     }
 

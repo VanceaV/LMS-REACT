@@ -1,5 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+
+
+
 
 export default class UpdateAuthor extends Component{
 
@@ -47,20 +51,30 @@ export default class UpdateAuthor extends Component{
     onSubmit(e){
         e.preventDefault();
         const author ={
+           
             author_id:this.state.author_id,
             author_name: this.state.author_name,
 
         }
 
 
-        axios.put('http://localhost:4000/book',author)
+        axios.put('http://localhost:4000/author',author)
         .then(responce =>{
             console.log(responce)
-        })
+        });
 
-        
+
 
     }
+
+
+
+    redirect() {
+        this.props.history.push('/authors')
+      }
+
+
+
 
 
 
@@ -69,7 +83,7 @@ export default class UpdateAuthor extends Component{
 
             <div style ={{marginTop: 10}}>
                 <h3 align ="center"> Update Author</h3>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit} >
 
 
                     <div className ="form-group">
@@ -79,7 +93,12 @@ export default class UpdateAuthor extends Component{
                             className="from-control"
                             value={this.state.author_name || ''}
                             onChange={this.onChangeName}
+ 
                         />
+
+
+                    
+
                     </div>
 
 
@@ -90,9 +109,21 @@ export default class UpdateAuthor extends Component{
                             value="Update Author"
                             className='btn btn-primary'   
                         />
-                       
-                    </div>
+
+
+<Link to={`/authors`}>
+                        
+                        </Link>
+
+                    
+                    </div> 
+
+
+
                 </form>
+
+                
+
             </div>
         )
     }
